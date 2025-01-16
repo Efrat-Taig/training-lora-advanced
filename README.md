@@ -62,13 +62,67 @@ hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='train_lora.py', local_
 We need to perform these installations because the training scripts differ slightly from those provided by Diffusers. This is due to the unique architecture of the Bria models.
 
 
-## 📊 Performance & Case Studies
 
-### Modern Blurred SeaView Dataset Case Study
+##Modern Blurred SeaView Dataset Case Study
 
-We conducted comparative experiments using the [Modern Blurred SeaView dataset](https://huggingface.co/datasets/Negev900/Modern_Blurred_SeaView/viewer) to demonstrate the improvements in this new model. This dataset is particularly useful for testing color fidelity and style consistency.
+We conducted comparative experiments using the [Modern Blurred SeaView dataset](https://huggingface.co/datasets/Negev900/Modern_Blurred_SeaView/viewer)
+an open-source datasets available on Hugging Face (HF) to demonstrate the improvements in this new model.
 
-#### Key Improvements Observed:
+# Training LoRA with BRIA
+To train the BRIA model using LoRA fine-tuning, use the run_fintune script.
+
+```bash
+run_fintune.sh
+```
+
+### Parameters:
+- **`--pretrained_model_name_or_path`**: Path to the pre-trained BRIA model.
+- **`--dataset_name`**: Hugging Face dataset containing images and prompts.
+- **`--output_dir`**: Directory to save fine-tuned weights.
+
+
+Note that for training, we are using the script `train_lora.py`, which we just downloaded using the command:  
+`hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='train_lora.py', local_dir=local_dir)`.  
+If you have modified any paths, update them here as well, or provide the full path to the script.
+
+
+
+
+# Running Inference
+
+The `inference.py` script allows you to generate images using the BRIA pipeline with pre-trained and optionally fine-tuned LoRA weights.
+
+#### Steps for Running Inference:
+
+1. **Set Up Your Environment**:
+   - Ensure all dependencies are installed as described in the setup instructions.
+   - Verify that your Hugging Face token is correctly set in the script (`your_hf_token_here`).
+
+2. **Customize Your Inputs**:
+- **Prompts**: Adjust `prompt` and `negative_prompt` for your use case.
+- **Image Size**: Modify the `height` and `width` parameters in the `pipe()` function to specify the resolution.
+- **LoRA Weights**: Specify the path to your fine-tuned weights in the `pipe.load_lora_weights()` function.
+
+3. **Run the Script**:
+   Execute the script using:
+   ```bash
+   python inference.py
+   ```
+
+4. **Output**:
+   - The script will generate an image based on your prompt.
+   - The generated image will be saved in the current directory as `generated_image.png`.
+
+The script will output an image and save it as `generated_image.png`. 
+
+
+
+# Results
+
+<img src="https://github.com/Efrat-Taig/ttraining-lora-advanced/Lora res.png" width="600">
+
+
+# Key Improvements Observed:
 - **Enhanced Color Palette Fidelity**: Significantly better preservation of the original dataset's color scheme
 - **Style Consistency**: More reliable reproduction of the blurred seaview aesthetic
 - **Prompt Alignment**: Better correlation between text prompts and generated images
