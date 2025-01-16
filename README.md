@@ -57,15 +57,10 @@ hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='transformer_bria.py', 
 hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='bria_utils.py', local_dir=local_dir)
 hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='train_lora.py', local_dir=local_dir)
 
-
-
 ```
 
-💡 **Pro Tips**:
-- Higher number of inference steps (30-50) generally produces better results
-- Use guidance_scale=5.0 as a starting point
-- Consider using negative prompts for better control
-- Experiment with different checkpoints from your training
+We need to perform these installations because the training scripts differ slightly from those provided by Diffusers. This is due to the unique architecture of the Bria models.
+
 
 ## 📊 Performance & Case Studies
 
