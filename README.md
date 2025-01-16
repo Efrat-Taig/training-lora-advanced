@@ -83,8 +83,12 @@ run_fintune.sh
 
 
 Note that for training, we are using the script `train_lora.py`, which we just downloaded using the command:  
-`hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='train_lora.py', local_dir=local_dir)`.  
-If you have modified any paths, update them here as well, or provide the full path to the script.
+
+```python
+hf_hub_download(repo_id="briaai/BRIA-4B-Adapt", filename='train_lora.py', local_dir=local_dir)
+
+```
+If you have modified any paths, update them here as well, or provide the full path to the 'train_lora.py' script.
 
 
 
