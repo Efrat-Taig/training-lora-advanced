@@ -119,7 +119,7 @@ The script will output an image and save it as `generated_image.png`.
 
 # Results
 
-<img src="https://github.com/Efrat-Taig/training-lora-advanced/Lora res.png" width="600">
+<img src="https://github.com/Efrat-Taig/training-lora-advanced/Lora_res.png" width="600">
 
 
 # Key Improvements Observed:
