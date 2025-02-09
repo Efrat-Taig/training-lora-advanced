@@ -35,7 +35,7 @@ Bria offers three flexible ways to implement LoRA training with Bria's Tailored 
      >💡 Note that this one is important :) If you are an academic researcher, you can get free access by filling out [this form](https://docs.google.com/forms/u/1/d/e/1FAIpQLSe-E1r-QoBmsAZbJ5MJKB76wGnk6bUn2kBq5imPQVVJviv1Kg/viewform) .Otherwise, feel free to reach out to us on our [Discord channel](https://discord.gg/Pkbp2BmZbq)
 
 
-
+If something in the installation doesn't work, you can access this [model card](https://huggingface.co/briaai/BRIA-4B-Adapt) and download the necessary files 
 ## 🛠 Installations
 
 ```bash
